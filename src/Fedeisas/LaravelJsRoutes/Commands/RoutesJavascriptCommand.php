@@ -1,6 +1,7 @@
 <?php namespace Fedeisas\LaravelJsRoutes\Commands;
 
 use Fedeisas\LaravelJsRoutes\Generators\RoutesJavascriptGenerator;
+use Fedeisas\LaravelJsRoutes\BasePath;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
@@ -30,14 +31,22 @@ class RoutesJavascriptCommand extends Command
     protected $generator;
 
     /**
+     * BasePath class to avoid base_path()
+     *
+     * @var Fedeisas\LaravelJsRoutes\BasePath
+     */
+    protected $basePath;
+
+    /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct(RoutesJavascriptGenerator $generator)
+    public function __construct(RoutesJavascriptGenerator $generator, BasePath $basePath)
     {
-        parent::__construct();
         $this->generator = $generator;
+        $this->basePath = $basePath;
+        parent::__construct();
     }
 
     /**
@@ -49,7 +58,12 @@ class RoutesJavascriptCommand extends Command
     {
         $path = $this->getPath();
 
-        if ($this->generator->make($this->option('path'), $this->argument('name'))) {
+        $options = array(
+            'filter' => $this->option('filter'),
+            'object' => $this->option('object')
+        );
+
+        if ($this->generator->make($this->option('path'), $this->argument('name'), $options)) {
             return $this->info("Created {$path}");
         }
 
@@ -86,7 +100,9 @@ class RoutesJavascriptCommand extends Command
     protected function getOptions()
     {
         return array(
-           array('path', null, InputOption::VALUE_OPTIONAL, 'Path to assets directory.', base_path())
+           array('path', 'p', InputOption::VALUE_OPTIONAL, 'Path to assets directory.', $this->basePath->get()),
+           array('filter', 'f', InputOption::VALUE_OPTIONAL, 'Custom route filter.', null),
+           array('object', 'o', InputOption::VALUE_OPTIONAL, 'Custom JS object.', 'Router')
         );
     }
 }

@@ -1,6 +1,6 @@
 (function(window){
   window.Router = {
-    routes: [{"uri":"user\/{id}","name":"user.show"}],
+    routes: [{"uri":"user\/{id}","name":"user.show"},{"uri":"user","name":"user.store"}],
     route: function(name, params) {
       var route = this.searchRoute(name);
 

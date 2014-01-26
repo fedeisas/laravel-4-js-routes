@@ -21,7 +21,8 @@ class LaravelJsRoutesServiceProvider extends ServiceProvider
     {
         $this->app['routes.javascript'] = $this->app->share(function ($app) {
             $generator = new Generators\RoutesJavascriptGenerator($app['files'], $app['router']);
-            return new Commands\RoutesJavascriptCommand($generator);
+            $basePath = new BasePath;
+            return new Commands\RoutesJavascriptCommand($generator, $basePath);
         });
 
         $this->commands('routes.javascript');

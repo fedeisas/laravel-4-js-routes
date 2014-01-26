@@ -1,6 +1,6 @@
 (function(window){
-  window.{{ object }} = {
-    routes: {{ routes }},
+  window.Router = {
+    routes: [{"uri":"user","name":"user.store"}],
     route: function(name, params) {
       var route = this.searchRoute(name);
 

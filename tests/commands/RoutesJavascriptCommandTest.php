@@ -14,35 +14,42 @@ class RoutesJavascriptCommandTest extends PHPUnit_Framework_TestCase
 
     public function testGeneratesJavascript()
     {
-        $gen = m::mock('Fedeisas\LaravelJsRoutes\Generators\RoutesJavascriptGenerator');
+        $generator = m::mock('Fedeisas\LaravelJsRoutes\Generators\RoutesJavascriptGenerator');
 
-        $gen->shouldReceive('make')
+        $generator->shouldReceive('make')
             ->once()
-            ->with('/routes.js')
+            ->with('/foo/bar', 'routes.js', array('filter' => null, 'object' => 'Router'))
             ->andReturn(true);
 
-        $command = new RoutesJavascriptCommand($gen);
+        $command = new RoutesJavascriptCommand($generator, $this->mockBasePath());
 
         $tester = new CommandTester($command);
-        $tester->execute(array('name' => 'routes.js'));
+        $tester->execute(array());
 
-        $this->assertEquals("Created /routes.js\n", $tester->getDisplay());
+        $this->assertEquals("Created /foo/bar/routes.js\n", $tester->getDisplay());
     }
 
-    public function testCanSetCustomPath()
+    public function testCanSetCustomPathAndCustomObject()
     {
-        $gen = m::mock('Fedeisas\LaravelJsRoutes\Generators\RoutesJavascriptGenerator');
+        $generator = m::mock('Fedeisas\LaravelJsRoutes\Generators\RoutesJavascriptGenerator');
 
-        $gen->shouldReceive('make')
+        $generator->shouldReceive('make')
             ->once()
-            ->with('assets/js/myRoutes.js')
+            ->with('assets/js', 'myRoutes.js', array('filter' => null, 'object' => 'Router'))
             ->andReturn(true);
 
-        $command = new RoutesJavascriptCommand($gen);
+        $command = new RoutesJavascriptCommand($generator, $this->mockBasePath());
 
         $tester = new CommandTester($command);
         $tester->execute(array('name' => 'myRoutes.js', '--path' => 'assets/js'));
 
         $this->assertEquals("Created assets/js/myRoutes.js\n", $tester->getDisplay());
+    }
+
+    private function mockBasePath()
+    {
+        $basePath = m::mock('Fedeisas\LaravelJsRoutes\BasePath')->makePartial();
+        $basePath->shouldReceive('get')->andReturn('/foo/bar');
+        return $basePath;
     }
 }
