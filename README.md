@@ -6,7 +6,7 @@ Laravel Javascript Routes
 
 
 ## Why?
-I love Laravel 4 routing system and I often use named routes like `route('users.show', array('id' => 1))` to generate `domain.tld/users/1`.
+I love the Laravel 4 routing system and I often use named routes like `route('users.show', array('id' => 1))` to generate `domain.tld/users/1`.
 With the amazing uprising of Javascript frameworks (AngularJS, EmberJS, Backbone, etc.) it's hard to track changes on your routes between the backend and the REST calls from your Javascript.
 The goal of this library is to expose those named routes to your frontend so you can do: `Route.get('users.show', {id: 1})` and get the same result.
 
@@ -41,7 +41,7 @@ That's it! You're all set to go. Run the `artisan` command from the Terminal to 
 ```bash
 $ php artisan routes:javascript
 ```
-> **Lazy Tip** If you use Grunt, you could set up a watcher that run this command whenever your routes files change.
+> **Lazy Tip** If you use Grunt, you could set up a watcher that runs this command whenever your routes files change.
 
 ## Arguments
 | Name     | Default     | Description     |
@@ -58,7 +58,7 @@ $ php artisan routes:javascript
 ## Javascript usage
 You have to include the generated file in your views (or your assets build process).
 ```html
-<script src="/routes.js" type="text/javascript">
+<script src="/path/to/routes.js" type="text/javascript">
 ```
 
 And then you have a `Routes` object on your global scope. You can use it as:
