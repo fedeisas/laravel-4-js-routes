@@ -21,9 +21,9 @@ class RoutesJavascriptGeneratorTest extends PHPUnit_Framework_TestCase
     protected function getRouter()
     {
         $router = new Illuminate\Routing\Router(new Illuminate\Events\Dispatcher);
-        $router->get('user/{id}', ['as' => 'user.show', function ($id) {
+        $router->get('user/{id}', array('as' => 'user.show', 'uses' => function ($id) {
             return $id;
-        }]);
+        }));
         return $router;
     }
 

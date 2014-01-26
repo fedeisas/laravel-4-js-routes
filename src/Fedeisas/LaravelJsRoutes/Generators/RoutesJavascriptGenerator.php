@@ -20,12 +20,14 @@ class RoutesJavascriptGenerator
     protected $router;
 
     /**
-     * Clean routes array
+     * Clean routes
+     * @var array
      */
     protected $routes;
 
     /**
-     * Parsed routes array
+     * Parsed routes
+     * @var array
      */
     protected $parsedRoutes;
 
@@ -46,7 +48,8 @@ class RoutesJavascriptGenerator
     /**
      * Compile routes template and generate
      *
-     * @param  string $path
+     * @param string $path
+     * @param string $name
      * @return boolean
      */
     public function make($path, $name)
@@ -65,8 +68,8 @@ class RoutesJavascriptGenerator
     /**
      * Get the route information for a given route.
      *
-     * @param  string  $name
-     * @param  \Illuminate\Routing\Route  $route
+     * @param string $name
+     * @param \Illuminate\Routing\Route $route
      * @return array
      */
     protected function getRouteInformation(Route $route)

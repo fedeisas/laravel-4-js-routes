@@ -24,7 +24,7 @@ class RoutesJavascriptCommandTest extends PHPUnit_Framework_TestCase
         $command = new RoutesJavascriptCommand($gen);
 
         $tester = new CommandTester($command);
-        $tester->execute(['name' => 'routes.js']);
+        $tester->execute(array('name' => 'routes.js'));
 
         $this->assertEquals("Created /routes.js\n", $tester->getDisplay());
     }
@@ -41,7 +41,7 @@ class RoutesJavascriptCommandTest extends PHPUnit_Framework_TestCase
         $command = new RoutesJavascriptCommand($gen);
 
         $tester = new CommandTester($command);
-        $tester->execute(['name' => 'myRoutes.js', '--path' => 'assets/js']);
+        $tester->execute(array('name' => 'myRoutes.js', '--path' => 'assets/js'));
 
         $this->assertEquals("Created assets/js/myRoutes.js\n", $tester->getDisplay());
     }
