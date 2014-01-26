@@ -75,7 +75,7 @@ Routes.get('users.show', {id: 1}) // returns http://dommain.tld/users/1
 Please, let me know! Send a pull request or a patch. Questions? Ask! I will respond to all filed issues.
 
 ## Inspiration
-Although no code was copied, this package is greatly inspired on [FOSJsRoutingBundle](https://github.com/FriendsOfSymfony/FOSJsRoutingBundle) for Symfony.
+Although no code was copied, this package is greatly inspired by [FOSJsRoutingBundle](https://github.com/FriendsOfSymfony/FOSJsRoutingBundle) for Symfony.
 
 ## License
 This package is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
