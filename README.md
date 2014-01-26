@@ -71,6 +71,13 @@ Example:
 Routes.get('users.show', {id: 1}) // returns http://dommain.tld/users/1
 ```
 
+## Contributing
+```bash
+$ composer install --dev
+$ ./vendor/bin/phpunit
+```
+In addition to a full test suite, there is Travis integration.
+
 ## Found a bug?
 Please, let me know! Send a pull request or a patch. Questions? Ask! I will respond to all filed issues.
 
