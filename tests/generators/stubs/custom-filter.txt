@@ -1,5 +1,9 @@
-(function(window){
-  window.Router = {
+(function(name, definition) {
+    if (typeof module != 'undefined') module.exports = definition();
+    else if (typeof define == 'function' && typeof define.amd == 'object') define(definition);
+    else this[name] = definition();
+}('Router', function() {
+  return {
     routes: [{"uri":"user","name":"user.store"},{"uri":"user\/{id}\/edit","name":"user.edit"}],
     route: function(name, params) {
       var route = this.searchRoute(name),
@@ -54,4 +58,4 @@
       return true;
     }
   };
-}(window));
+}));

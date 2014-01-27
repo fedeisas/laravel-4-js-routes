@@ -52,8 +52,8 @@ class RoutesJavascriptGenerator
 
         $template = $this->file->get(__DIR__ . '/templates/Router.js');
 
-        $template = str_replace('{{ routes }}', json_encode($this->parsedRoutes), $template);
-        $template = str_replace('{{ object }}', $options['object'], $template);
+        $template = str_replace("routes: null,", 'routes: ' . json_encode($this->parsedRoutes) . ',', $template);
+        $template = str_replace("'Router'", "'" . $options['object'] . "'", $template);
 
         if ($this->file->isWritable($path)) {
             $filename = $path . '/' . $name;
