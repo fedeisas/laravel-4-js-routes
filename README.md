@@ -8,7 +8,7 @@ Laravel Javascript Routes
 ## Why?
 I love the Laravel 4 routing system and I often use named routes like `route('users.show', array('id' => 1))` to generate `http://domain.tld/users/1`.
 With the amazing uprising of Javascript frameworks (AngularJS, EmberJS, Backbone, etc.) it's hard to track changes on your routes between the backend and the REST calls from your Javascript.
-The goal of this library is to expose those named routes to your frontend so you can do: `Route.route('users.show', {id: 1})` and get the same result.
+The goal of this library is to expose those named routes to your frontend so you can do: `Router.route('users.show', {id: 1})` and get the same result.
 
 
 ## Installation
@@ -63,17 +63,17 @@ You have to include the generated file in your views (or your assets build proce
 
 And then you have a `Routes` object on your global scope. You can use it as:
 ```javascript
-Routes.route(route_name, params)
+Router.route(route_name, params)
 ```
 
 Example:
 ```javascript
-Routes.route('users.show', {id: 1}) // returns http://dommain.tld/users/1
+Router.route('users.show', {id: 1}) // returns http://dommain.tld/users/1
 ```
 
 If you assign parameters that are not present on the URI, they will get appended as a query string:
 ```javascript
-Routes.route('users.show', {id: 1, name: 'John', order: 'asc'}) // returns http://dommain.tld/users/1?name=John&order=asc
+Router.route('users.show', {id: 1, name: 'John', order: 'asc'}) // returns http://dommain.tld/users/1?name=John&order=asc
 ```
 
 ## Contributing
