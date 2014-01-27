@@ -91,6 +91,3 @@ Although no code was copied, this package is greatly inspired by [FOSJsRoutingBu
 
 ## License
 This package is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fedeisas/laravel-js-routes/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
