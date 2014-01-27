@@ -50,7 +50,7 @@ class RoutesJavascriptGenerator
     {
         $this->parsedRoutes = $this->getParsedRoutes($options['filter']);
 
-        $template = $this->file->get(__DIR__ . '/templates/javascript.txt');
+        $template = $this->file->get(__DIR__ . '/templates/Router.js');
 
         $template = str_replace('{{ routes }}', json_encode($this->parsedRoutes), $template);
         $template = str_replace('{{ object }}', $options['object'], $template);

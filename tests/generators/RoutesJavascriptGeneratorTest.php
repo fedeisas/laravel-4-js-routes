@@ -27,6 +27,9 @@ class RoutesJavascriptGeneratorTest extends PHPUnit_Framework_TestCase
         $router->post('user', array('as' => 'user.store', 'before' => 'js-routable', 'uses' => function ($id) {
             return $id;
         }));
+        $router->get('/user/{id}/edit', array('as' => 'user.edit', 'before' => 'js-routable', 'uses' => function ($id) {
+            return $id;
+        }));
         return $router;
     }
 

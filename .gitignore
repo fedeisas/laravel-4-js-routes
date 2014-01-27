@@ -1,4 +1,7 @@
 /vendor
 composer.phar
 composer.lock
+node_modules/
+_SpecRunner.html
+.grunt/
 .DS_Store

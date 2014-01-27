@@ -1,0 +1,17 @@
+{
+  "name": "laravel-js-routes",
+  "version": "0.0.1",
+  "description": "Laravel routes from Javascript",
+  "license": "MIT",
+  "homepage": "http://github.com/fedeisas/laravel-js-routes",
+  "author": {
+    "name": "Fede Isas",
+    "url": "https://twitter.com/fedeisas",
+    "role": "Developer"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jasmine": "~0.5.2",
+    "grunt-contrib-jshint": "~0.8.0"
+  }
+}

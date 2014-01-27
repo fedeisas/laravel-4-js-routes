@@ -1,12 +1,13 @@
 (function(window){
   window.MyRouter = {
-    routes: [{"uri":"user\/{id}","name":"user.show"},{"uri":"user","name":"user.store"}],
+    routes: [{"uri":"user\/{id}","name":"user.show"},{"uri":"user","name":"user.store"},{"uri":"user\/{id}\/edit","name":"user.edit"}],
     route: function(name, params) {
-      var route = this.searchRoute(name);
+      var route = this.searchRoute(name),
+          rootUrl = this.getRootUrl();
 
       if (route) {
         var compiled = this.buildParams(route, params);
-        return compiled;
+        return rootUrl + '/' + compiled;
       }
 
     },
@@ -18,14 +19,39 @@
       }
     },
     buildParams: function(route, params) {
-      var compiled = route.uri;
+      var compiled = route.uri,
+          queryParams = {};
 
       for(var key in params) {
-        var value = params[key];
-        compiled = compiled.replace('{' + key + '}', value);
+        if (compiled.indexOf('{' + key + '}') != -1) {
+          compiled = compiled.replace('{' + key + '}', params[key]);
+        } else {
+          queryParams[key] = params[key];
+        }
+      }
+
+      if (!this.isEmptyObject(queryParams)) {
+        return compiled + this.buildQueryString(queryParams);
       }
 
       return compiled;
+    },
+    getRootUrl: function() {
+      return window.location.protocol + '//' + window.location.host;
+    },
+    buildQueryString: function(params) {
+      var ret = [];
+      for (var key in params) {
+        ret.push(encodeURIComponent(key) + "=" + encodeURIComponent(params[key]));
+      }
+      return '?' + ret.join("&");
+    },
+    isEmptyObject: function(obj) {
+      var name;
+      for (name in obj) {
+        return false;
+      }
+      return true;
     }
   };
 }(window));

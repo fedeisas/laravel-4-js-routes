@@ -1,6 +1,6 @@
 (function(window){
-  window.Router = {
-    routes: [{"uri":"user\/{id}","name":"user.show"},{"uri":"user","name":"user.store"},{"uri":"user\/{id}\/edit","name":"user.edit"}],
+  window.{{ object }} = {
+    routes: {{ routes }},
     route: function(name, params) {
       var route = this.searchRoute(name),
           rootUrl = this.getRootUrl();
