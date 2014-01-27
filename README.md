@@ -63,12 +63,17 @@ You have to include the generated file in your views (or your assets build proce
 
 And then you have a `Routes` object on your global scope. You can use it as:
 ```javascript
-Routes.get(route_name, params)
+Routes.route(route_name, params)
 ```
 
 Example:
 ```javascript
-Routes.get('users.show', {id: 1}) // returns http://dommain.tld/users/1
+Routes.route('users.show', {id: 1}) // returns http://dommain.tld/users/1
+```
+
+If you assign parameters that are not present on the URI, they will get appended as a query string:
+```javascript
+Routes.route('users.show', {id: 1, name: 'John', order: 'asc'}) // returns http://dommain.tld/users/1?name=John&order=asc
 ```
 
 ## Contributing
