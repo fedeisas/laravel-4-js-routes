@@ -5,6 +5,8 @@ php:
   - 5.5
 
 before_script:
+  - sudo apt-get phantomjs
+  - npm install
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install --dev
 
@@ -16,3 +18,4 @@ script:
   - ./vendor/bin/parallel-lint ./src/
   - ./vendor/bin/parallel-lint ./tests/
   - ./vendor/bin/phpunit
+  - grunt travis --verbose
