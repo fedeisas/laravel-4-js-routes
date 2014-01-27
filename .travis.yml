@@ -4,7 +4,11 @@ php:
   - 5.4
   - 5.5
 
+node_js:
+  - 0.10
+
 before_script:
+  - npm install -g grunt-cli
   - npm install
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install --dev
