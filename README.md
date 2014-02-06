@@ -23,7 +23,7 @@ Begin by installing this package through Composer. Edit your project's `composer
 {
   "require": {
         "laravel/framework": "4.0.*",
-        "fedeisas/laravel-js-routes": "0.1.*"
+        "fedeisas/laravel-js-routes": "1.*"
     },
     "minimum-stability" : "dev"
 }
