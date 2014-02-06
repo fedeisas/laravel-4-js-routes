@@ -1,8 +1,13 @@
 Laravel Javascript Routes
 =========================
 
-[![](https://secure.travis-ci.org/fedeisas/laravel-js-routes.png)](http://travis-ci.org/fedeisas/laravel-js-routes)
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fedeisas/laravel-js-routes/trend.png)](https://bitdeli.com/free "Bitdeli Badge")[![Latest Stable Version](https://poser.pugx.org/fedeisas/laravel-js-routes/v/stable.png)](https://packagist.org/packages/fedeisas/laravel-js-routes) [![Total Downloads](https://poser.pugx.org/fedeisas/laravel-js-routes/downloads.png)](https://packagist.org/packages/fedeisas/laravel-js-routes) [![Latest Unstable Version](https://poser.pugx.org/fedeisas/laravel-js-routes/v/unstable.png)](https://packagist.org/packages/fedeisas/laravel-js-routes) [![License](https://poser.pugx.org/fedeisas/laravel-js-routes/license.png)](https://packagist.org/packages/fedeisas/laravel-js-routes)
+[![Travis Badge](https://secure.travis-ci.org/fedeisas/laravel-js-routes.png)](http://travis-ci.org/fedeisas/laravel-js-routes)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fedeisas/laravel-js-routes/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Latest Stable Version](https://poser.pugx.org/fedeisas/laravel-js-routes/v/stable.png)](https://packagist.org/packages/fedeisas/laravel-js-routes)
+[![Total Downloads](https://poser.pugx.org/fedeisas/laravel-js-routes/downloads.png)](https://packagist.org/packages/fedeisas/laravel-js-routes)
+[![Latest Unstable Version](https://poser.pugx.org/fedeisas/laravel-js-routes/v/unstable.png)](https://packagist.org/packages/fedeisas/laravel-js-routes)
+[![License](https://poser.pugx.org/fedeisas/laravel-js-routes/license.png)](https://packagist.org/packages/fedeisas/laravel-js-routes)
+[![Coverage Status](https://coveralls.io/repos/fedeisas/laravel-js-routes/badge.png)](https://coveralls.io/r/fedeisas/laravel-js-routes)
 
 
 ## Why?
@@ -19,7 +24,7 @@ Begin by installing this package through Composer. Edit your project's `composer
 {
   "require": {
         "laravel/framework": "4.0.*",
-        "fedeisas/laravel-js-routes": "dev-master"
+        "fedeisas/laravel-js-routes": "0.1.*"
     },
     "minimum-stability" : "dev"
 }
