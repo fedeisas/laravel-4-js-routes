@@ -34,5 +34,5 @@
             "src/Fedeisas/LaravelJsRoutes/Generators"
         ]
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
