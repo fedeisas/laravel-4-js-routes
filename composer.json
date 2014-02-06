@@ -24,8 +24,7 @@
         "squizlabs/php_codesniffer": "1.*",
         "jakub-onderka/php-parallel-lint": "*",
         "jakub-onderka/php-console-highlighter": "dev-master",
-        "phpmd/phpmd": "1.5.*",
-        "satooshi/php-coveralls": "dev-master"
+        "phpmd/phpmd": "1.5.*"
     },
     "autoload": {
         "psr-0": {
