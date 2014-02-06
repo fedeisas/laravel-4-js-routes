@@ -2,13 +2,12 @@ Laravel Javascript Routes
 =========================
 
 [![Travis Badge](https://secure.travis-ci.org/fedeisas/laravel-js-routes.png)](http://travis-ci.org/fedeisas/laravel-js-routes)
+[![Coverage Status](https://coveralls.io/repos/fedeisas/laravel-js-routes/badge.png)](https://coveralls.io/r/fedeisas/laravel-js-routes)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fedeisas/laravel-js-routes/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 [![Latest Stable Version](https://poser.pugx.org/fedeisas/laravel-js-routes/v/stable.png)](https://packagist.org/packages/fedeisas/laravel-js-routes)
 [![Latest Unstable Version](https://poser.pugx.org/fedeisas/laravel-js-routes/v/unstable.png)](https://packagist.org/packages/fedeisas/laravel-js-routes)
 [![Total Downloads](https://poser.pugx.org/fedeisas/laravel-js-routes/downloads.png)](https://packagist.org/packages/fedeisas/laravel-js-routes)
 [![License](https://poser.pugx.org/fedeisas/laravel-js-routes/license.png)](https://packagist.org/packages/fedeisas/laravel-js-routes)
-[![Coverage Status](https://coveralls.io/repos/fedeisas/laravel-js-routes/badge.png)](https://coveralls.io/r/fedeisas/laravel-js-routes)
-
 
 ## Why?
 I love the Laravel 4 routing system and I often use named routes like `route('users.show', array('id' => 1))` to generate `http://domain.tld/users/1`.
