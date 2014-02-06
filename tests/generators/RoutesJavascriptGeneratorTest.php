@@ -30,10 +30,14 @@ class RoutesJavascriptGeneratorTest extends PHPUnit_Framework_TestCase
         $router->get('/user/{id}/edit', array('as' => 'user.edit', 'before' => 'js-routable', 'uses' => function ($id) {
             return $id;
         }));
+        $router->get('/unnamed_route', array('uses' => function ($id) {
+            return $id;
+        }));
         return $router;
     }
 
-    public function testCanGenerateJavascript()
+    /** @test **/
+    public function it_can_generate_javascript()
     {
         $file = m::mock('Illuminate\Filesystem\Filesystem')->makePartial();
 
@@ -49,7 +53,8 @@ class RoutesJavascriptGeneratorTest extends PHPUnit_Framework_TestCase
         $generator->make('/foo/bar', 'routes.js', array('filter' => null, 'object' => 'Router'));
     }
 
-    public function testCanGenerateJavascriptCustomObject()
+    /** @test **/
+    public function it_can_generate_javascript_with_custom_object()
     {
         $file = m::mock('Illuminate\Filesystem\Filesystem')->makePartial();
 
@@ -65,7 +70,8 @@ class RoutesJavascriptGeneratorTest extends PHPUnit_Framework_TestCase
         $generator->make('/foo/bar', 'routes.js', array('filter' => null, 'object' => 'MyRouter'));
     }
 
-    public function testCanGenerateJavascriptCustomFilter()
+    /** @test **/
+    public function it_can_generate_javascript_with_custom_filter()
     {
         $file = m::mock('Illuminate\Filesystem\Filesystem')->makePartial();
 
@@ -79,5 +85,20 @@ class RoutesJavascriptGeneratorTest extends PHPUnit_Framework_TestCase
 
         $generator = new RoutesJavascriptGenerator($file, $this->getRouter());
         $generator->make('/foo/bar', 'routes.js', array('filter' => 'js-routable', 'object' => 'Router'));
+    }
+
+    /** @test **/
+    public function if_fails_on_non_writable_path()
+    {
+        $file = m::mock('Illuminate\Filesystem\Filesystem')->makePartial();
+
+        $file->shouldReceive('isWritable')
+             ->once()
+             ->andReturn(false);
+
+        $generator = new RoutesJavascriptGenerator($file, $this->getRouter());
+        $output = $generator->make('/foo/bar', 'routes.js', array('filter' => 'js-routable', 'object' => 'Router'));
+
+        $this->assertFalse($output);
     }
 }

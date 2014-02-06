@@ -102,6 +102,8 @@ class RoutesJavascriptGenerator
                 'before' => $this->getBeforeFilters($route)
             );
         }
+
+        return null;
     }
 
     /**

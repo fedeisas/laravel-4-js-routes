@@ -1,7 +1,7 @@
-/vendor
+/vendor/
+/node_modules/
+/.grunt/
+/build/
 composer.phar
-composer.lock
-node_modules/
 _SpecRunner.html
-.grunt/
 .DS_Store

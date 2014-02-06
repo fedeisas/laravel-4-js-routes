@@ -8,6 +8,7 @@ node_js:
   - 0.10
 
 before_script:
+  - mkdir -p build/logs
   - npm install -g grunt-cli
   - npm install
   - curl -s http://getcomposer.org/installer | php
@@ -20,5 +21,8 @@ script:
   - ./vendor/bin/phpmd ./tests/ text phpmd.xml
   - ./vendor/bin/parallel-lint ./src/
   - ./vendor/bin/parallel-lint ./tests/
-  - ./vendor/bin/phpunit
+  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
   - grunt travis --verbose
+
+after_script:
+  - php vendor/bin/coveralls -v

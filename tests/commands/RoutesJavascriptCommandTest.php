@@ -7,12 +7,23 @@ use Mockery as m;
 class RoutesJavascriptCommandTest extends PHPUnit_Framework_TestCase
 {
 
+    public function setUp()
+    {
+        $app = m::mock('Application')
+                ->shouldReceive('make')
+                ->with('path.base')
+                ->andReturn('/foo/bar')
+                ->mock();
+        Illuminate\Support\Facades\Facade::setFacadeApplication($app);
+    }
+
     public function tearDown()
     {
         m::close();
     }
 
-    public function testGeneratesJavascript()
+    /** @test **/
+    public function it_generated_javascript()
     {
         $generator = m::mock('Fedeisas\LaravelJsRoutes\Generators\RoutesJavascriptGenerator');
 
@@ -21,7 +32,7 @@ class RoutesJavascriptCommandTest extends PHPUnit_Framework_TestCase
             ->with('/foo/bar', 'routes.js', array('filter' => null, 'object' => 'Router'))
             ->andReturn(true);
 
-        $command = new RoutesJavascriptCommand($generator, $this->mockBasePath());
+        $command = new RoutesJavascriptCommand($generator);
 
         $tester = new CommandTester($command);
         $tester->execute(array());
@@ -29,7 +40,8 @@ class RoutesJavascriptCommandTest extends PHPUnit_Framework_TestCase
         $this->assertEquals("Created /foo/bar/routes.js\n", $tester->getDisplay());
     }
 
-    public function testCanSetCustomPathAndCustomObject()
+    /** @test **/
+    public function it_can_set_custom_path_and_custom_object()
     {
         $generator = m::mock('Fedeisas\LaravelJsRoutes\Generators\RoutesJavascriptGenerator');
 
@@ -38,7 +50,7 @@ class RoutesJavascriptCommandTest extends PHPUnit_Framework_TestCase
             ->with('assets/js', 'myRoutes.js', array('filter' => null, 'object' => 'Router'))
             ->andReturn(true);
 
-        $command = new RoutesJavascriptCommand($generator, $this->mockBasePath());
+        $command = new RoutesJavascriptCommand($generator);
 
         $tester = new CommandTester($command);
         $tester->execute(array('name' => 'myRoutes.js', '--path' => 'assets/js'));
@@ -46,10 +58,21 @@ class RoutesJavascriptCommandTest extends PHPUnit_Framework_TestCase
         $this->assertEquals("Created assets/js/myRoutes.js\n", $tester->getDisplay());
     }
 
-    private function mockBasePath()
+    /** @test **/
+    public function it_fails_on_unexistent_path()
     {
-        $basePath = m::mock('Fedeisas\LaravelJsRoutes\BasePath')->makePartial();
-        $basePath->shouldReceive('get')->andReturn('/foo/bar');
-        return $basePath;
+        $generator = m::mock('Fedeisas\LaravelJsRoutes\Generators\RoutesJavascriptGenerator');
+
+        $generator->shouldReceive('make')
+            ->once()
+            ->with('unexistent/path', 'myRoutes.js', array('filter' => null, 'object' => 'Router'))
+            ->andReturn(false);
+
+        $command = new RoutesJavascriptCommand($generator);
+
+        $tester = new CommandTester($command);
+        $tester->execute(array('name' => 'myRoutes.js', '--path' => 'unexistent/path'));
+
+        $this->assertEquals("Could not create unexistent/path/myRoutes.js\n", $tester->getDisplay());
     }
 }
