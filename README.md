@@ -14,6 +14,8 @@ I love the Laravel 4 routing system and I often use named routes like `route('us
 With the amazing uprising of Javascript frameworks (AngularJS, EmberJS, Backbone, etc.) it's hard to track changes on your routes between the backend and the REST calls from your Javascript.
 The goal of this library is to expose those named routes to your frontend so you can do: `Router.route('users.show', {id: 1})` and get the same result.
 
+## Requirements
+- Laravel **4.1**
 
 ## Installation
 
