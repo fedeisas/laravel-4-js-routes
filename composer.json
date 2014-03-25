@@ -31,8 +31,8 @@
             "Fedeisas\\LaravelJsRoutes\\": "src/"
         },
         "classmap": [
-            "src/Fedeisas/LaravelJsRoutes/Commands",
-            "src/Fedeisas/LaravelJsRoutes/Generators"
+            "src/Commands",
+            "src/Generators"
         ]
     },
     "minimum-stability": "stable"
