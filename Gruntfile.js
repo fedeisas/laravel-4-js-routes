@@ -11,7 +11,7 @@ module.exports = function(grunt) {
     },
     jasmine: {
       components: {
-        src: ['src/Fedeisas/LaravelJsRoutes/Generators/templates/Router.js'],
+        src: ['src/Generators/templates/Router.js'],
         options: {
           specs: 'tests/jasmine/spec/*Spec.js',
           keepRunner : true

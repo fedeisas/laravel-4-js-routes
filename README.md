@@ -87,6 +87,13 @@ Router.route('users.show', {id: 1, name: 'John', order: 'asc'}) // returns http:
 $ composer install --dev
 $ ./vendor/bin/phpunit
 ```
+
+```bash
+$ npm install -g grunt-cli
+$ npm install
+$ grunt travis --verbose
+```
+
 In addition to a full test suite, there is Travis integration.
 
 ## Found a bug?
