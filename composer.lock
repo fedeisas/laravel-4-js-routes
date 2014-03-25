@@ -3,21 +3,21 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "68e0b58dc2a862ccf25d6ab536022eb0",
+    "hash": "012ce5647e85e59397478f92afae81d7",
     "packages": [
         {
             "name": "illuminate/cache",
-            "version": "v4.1.21",
+            "version": "v4.1.24",
             "target-dir": "Illuminate/Cache",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cache.git",
-                "reference": "3f503abfa1cd59457d0b53995e6d560cb2941190"
+                "reference": "96953226a11ddda8b740266b41c667fb787aff3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/cache/zipball/3f503abfa1cd59457d0b53995e6d560cb2941190",
-                "reference": "3f503abfa1cd59457d0b53995e6d560cb2941190",
+                "url": "https://api.github.com/repos/illuminate/cache/zipball/96953226a11ddda8b740266b41c667fb787aff3f",
+                "reference": "96953226a11ddda8b740266b41c667fb787aff3f",
                 "shasum": ""
             },
             "require": {
@@ -30,7 +30,7 @@
                 "illuminate/encryption": "4.1.*",
                 "illuminate/filesystem": "4.1.*",
                 "illuminate/redis": "4.1.*",
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -55,28 +55,28 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-01-28 15:50:16"
+            "time": "2014-03-04 22:56:43"
         },
         {
             "name": "illuminate/console",
-            "version": "v4.1.21",
+            "version": "v4.1.24",
             "target-dir": "Illuminate/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "5f38c8f821b33d44fe5a5cf90031c7f52bc7e366"
+                "reference": "1b3a9166f308038c4a80e1795e29166cb7b53314"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/5f38c8f821b33d44fe5a5cf90031c7f52bc7e366",
-                "reference": "5f38c8f821b33d44fe5a5cf90031c7f52bc7e366",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/1b3a9166f308038c4a80e1795e29166cb7b53314",
+                "reference": "1b3a9166f308038c4a80e1795e29166cb7b53314",
                 "shasum": ""
             },
             "require": {
                 "symfony/console": "2.4.*"
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -101,28 +101,28 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2013-12-22 02:42:19"
+            "time": "2014-03-04 22:56:43"
         },
         {
             "name": "illuminate/container",
-            "version": "v4.1.21",
+            "version": "v4.1.24",
             "target-dir": "Illuminate/Container",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "5bc3b7e3227bf6933d382da3cb4631ca1ca63368"
+                "reference": "2e2e14d50feb924de7c0a81843fe617dd94aadec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/5bc3b7e3227bf6933d382da3cb4631ca1ca63368",
-                "reference": "5bc3b7e3227bf6933d382da3cb4631ca1ca63368",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/2e2e14d50feb924de7c0a81843fe617dd94aadec",
+                "reference": "2e2e14d50feb924de7c0a81843fe617dd94aadec",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -147,21 +147,21 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-01-17 01:48:27"
+            "time": "2014-03-07 14:45:01"
         },
         {
             "name": "illuminate/cookie",
-            "version": "v4.1.21",
+            "version": "v4.1.24",
             "target-dir": "Illuminate/Cookie",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cookie.git",
-                "reference": "a608c7d61d80278cb547480c2457397e0aab5072"
+                "reference": "8c3617bf2153fd6d5ab93ca39d6a1001706d445e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/cookie/zipball/a608c7d61d80278cb547480c2457397e0aab5072",
-                "reference": "a608c7d61d80278cb547480c2457397e0aab5072",
+                "url": "https://api.github.com/repos/illuminate/cookie/zipball/8c3617bf2153fd6d5ab93ca39d6a1001706d445e",
+                "reference": "8c3617bf2153fd6d5ab93ca39d6a1001706d445e",
                 "shasum": ""
             },
             "require": {
@@ -172,8 +172,8 @@
                 "symfony/http-kernel": "2.4.*"
             },
             "require-dev": {
-                "mockery/mockery": "0.7.2",
-                "phpunit/phpunit": "3.7.*"
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -198,21 +198,21 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-01-18 16:39:57"
+            "time": "2014-03-04 22:56:43"
         },
         {
             "name": "illuminate/encryption",
-            "version": "v4.1.21",
+            "version": "v4.1.24",
             "target-dir": "Illuminate/Encryption",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/encryption.git",
-                "reference": "a7ded5e5fee4685c94b9bfb8b1c74b0750f4e23b"
+                "reference": "7ee93e26746e19cf992b17f5f595371d435679dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/encryption/zipball/a7ded5e5fee4685c94b9bfb8b1c74b0750f4e23b",
-                "reference": "a7ded5e5fee4685c94b9bfb8b1c74b0750f4e23b",
+                "url": "https://api.github.com/repos/illuminate/encryption/zipball/7ee93e26746e19cf992b17f5f595371d435679dc",
+                "reference": "7ee93e26746e19cf992b17f5f595371d435679dc",
                 "shasum": ""
             },
             "require": {
@@ -220,7 +220,7 @@
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -245,21 +245,21 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-01-17 20:11:45"
+            "time": "2014-03-04 22:56:43"
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v4.1.21",
+            "version": "v4.1.24",
             "target-dir": "Illuminate/Filesystem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
-                "reference": "74b51ab0355f36ea84de74ddada1c56cd15eed5d"
+                "reference": "8490569e31c5bebcbf453a468e9ae4bedd0837d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/74b51ab0355f36ea84de74ddada1c56cd15eed5d",
-                "reference": "74b51ab0355f36ea84de74ddada1c56cd15eed5d",
+                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/8490569e31c5bebcbf453a468e9ae4bedd0837d7",
+                "reference": "8490569e31c5bebcbf453a468e9ae4bedd0837d7",
                 "shasum": ""
             },
             "require": {
@@ -268,7 +268,7 @@
                 "symfony/finder": "2.4.*"
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -293,21 +293,21 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-01-17 18:08:13"
+            "time": "2014-03-04 22:56:43"
         },
         {
             "name": "illuminate/http",
-            "version": "v4.1.21",
+            "version": "v4.1.24",
             "target-dir": "Illuminate/Http",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/http.git",
-                "reference": "e6e03dd17185c9d3b784729cb20011f4a6f1d277"
+                "reference": "43a3e62c6ac98f94473924aeb9a8bacf42c911a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/http/zipball/e6e03dd17185c9d3b784729cb20011f4a6f1d277",
-                "reference": "e6e03dd17185c9d3b784729cb20011f4a6f1d277",
+                "url": "https://api.github.com/repos/illuminate/http/zipball/43a3e62c6ac98f94473924aeb9a8bacf42c911a4",
+                "reference": "43a3e62c6ac98f94473924aeb9a8bacf42c911a4",
                 "shasum": ""
             },
             "require": {
@@ -317,8 +317,8 @@
                 "symfony/http-kernel": "2.4.*"
             },
             "require-dev": {
-                "mockery/mockery": "0.7.2",
-                "phpunit/phpunit": "3.7.*"
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -343,21 +343,21 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-01-31 14:28:12"
+            "time": "2014-03-10 20:00:02"
         },
         {
             "name": "illuminate/routing",
-            "version": "v4.1.21",
+            "version": "v4.1.24",
             "target-dir": "Illuminate/Routing",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/routing.git",
-                "reference": "a6ced3ea19e814572d38ba5e5d7dc306bdf907f3"
+                "reference": "4a9721fc0e11f464942606e8f9b915eab7cd45ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/routing/zipball/a6ced3ea19e814572d38ba5e5d7dc306bdf907f3",
-                "reference": "a6ced3ea19e814572d38ba5e5d7dc306bdf907f3",
+                "url": "https://api.github.com/repos/illuminate/routing/zipball/4a9721fc0e11f464942606e8f9b915eab7cd45ae",
+                "reference": "4a9721fc0e11f464942606e8f9b915eab7cd45ae",
                 "shasum": ""
             },
             "require": {
@@ -372,8 +372,8 @@
             "require-dev": {
                 "illuminate/console": "4.1.*",
                 "illuminate/filesystem": "4.1.*",
-                "mockery/mockery": "0.7.2",
-                "phpunit/phpunit": "3.7.*"
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -398,21 +398,21 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-02-03 00:38:44"
+            "time": "2014-03-07 14:45:01"
         },
         {
             "name": "illuminate/session",
-            "version": "v4.1.21",
+            "version": "v4.1.24",
             "target-dir": "Illuminate/Session",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/session.git",
-                "reference": "d5fec8918d6e388f37a665b2c0e7d451cf8f2a37"
+                "reference": "2e646cbfc0032c460e02441f41413f42178ba781"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/session/zipball/d5fec8918d6e388f37a665b2c0e7d451cf8f2a37",
-                "reference": "d5fec8918d6e388f37a665b2c0e7d451cf8f2a37",
+                "url": "https://api.github.com/repos/illuminate/session/zipball/2e646cbfc0032c460e02441f41413f42178ba781",
+                "reference": "2e646cbfc0032c460e02441f41413f42178ba781",
                 "shasum": ""
             },
             "require": {
@@ -427,8 +427,8 @@
             },
             "require-dev": {
                 "illuminate/console": "4.1.*",
-                "mockery/mockery": "0.8.0",
-                "phpunit/phpunit": "3.7.*"
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -453,30 +453,31 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-02-03 00:38:44"
+            "time": "2014-03-13 11:43:48"
         },
         {
             "name": "illuminate/support",
-            "version": "v4.1.21",
+            "version": "v4.1.24",
             "target-dir": "Illuminate/Support",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "f6df9a5d9fac6b5fda1c94d2cd2847346967bdbc"
+                "reference": "ff32e707fa8b6e975ee46e5277b6270ec2f7029f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/f6df9a5d9fac6b5fda1c94d2cd2847346967bdbc",
-                "reference": "f6df9a5d9fac6b5fda1c94d2cd2847346967bdbc",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/ff32e707fa8b6e975ee46e5277b6270ec2f7029f",
+                "reference": "ff32e707fa8b6e975ee46e5277b6270ec2f7029f",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "mockery/mockery": "0.7.2",
+                "jeremeamia/superclosure": "1.0.*",
+                "mockery/mockery": "0.9.*",
                 "patchwork/utf8": "1.1.*",
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -504,7 +505,7 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-01-30 19:59:45"
+            "time": "2014-03-13 01:02:42"
         },
         {
             "name": "nesbot/carbon",
@@ -1004,17 +1005,17 @@
     "packages-dev": [
         {
             "name": "illuminate/events",
-            "version": "v4.1.21",
+            "version": "v4.1.24",
             "target-dir": "Illuminate/Events",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
-                "reference": "f07a516087bf05e216af01c0cb046983d101a6cd"
+                "reference": "e7ab5a682832c1e8c76b724158b1524353d6cfd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/events/zipball/f07a516087bf05e216af01c0cb046983d101a6cd",
-                "reference": "f07a516087bf05e216af01c0cb046983d101a6cd",
+                "url": "https://api.github.com/repos/illuminate/events/zipball/e7ab5a682832c1e8c76b724158b1524353d6cfd1",
+                "reference": "e7ab5a682832c1e8c76b724158b1524353d6cfd1",
                 "shasum": ""
             },
             "require": {
@@ -1023,8 +1024,8 @@
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "mockery/mockery": "0.7.2",
-                "phpunit/phpunit": "3.7.*"
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -1049,7 +1050,7 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-01-17 20:11:45"
+            "time": "2014-03-04 22:56:43"
         },
         {
             "name": "jakub-onderka/php-console-highlighter",
@@ -1305,16 +1306,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "1.2.15",
+            "version": "1.2.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "6ba4ed2895d538a039d5d5866edc4ec0424c7852"
+                "reference": "69e55e68481cf708a6db43aff0b504e31402fe27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6ba4ed2895d538a039d5d5866edc4ec0424c7852",
-                "reference": "6ba4ed2895d538a039d5d5866edc4ec0424c7852",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/69e55e68481cf708a6db43aff0b504e31402fe27",
+                "reference": "69e55e68481cf708a6db43aff0b504e31402fe27",
                 "shasum": ""
             },
             "require": {
@@ -1362,7 +1363,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-02-03 07:44:47"
+            "time": "2014-02-25 03:34:05"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1499,16 +1500,16 @@
         },
         {
             "name": "phpunit/php-token-stream",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "5220af2a7929aa35cf663d97c89ad3d50cf5fa3e"
+                "reference": "ad4e1e23ae01b483c16f600ff1bebec184588e32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/5220af2a7929aa35cf663d97c89ad3d50cf5fa3e",
-                "reference": "5220af2a7929aa35cf663d97c89ad3d50cf5fa3e",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/ad4e1e23ae01b483c16f600ff1bebec184588e32",
+                "reference": "ad4e1e23ae01b483c16f600ff1bebec184588e32",
                 "shasum": ""
             },
             "require": {
@@ -1545,7 +1546,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2013-09-13 04:58:23"
+            "time": "2014-03-03 05:10:30"
         },
         {
             "name": "phpunit/phpunit",
