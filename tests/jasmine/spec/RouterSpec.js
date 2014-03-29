@@ -9,7 +9,8 @@ describe("Router", function() {
     {"uri": "user", "name": "user.store"},
     {"uri": "user\/{id}\/edit", "name": "user.edit"},
     {"uri": "search", "name": "search.index"},
-    {"uri": "search\/{type}", "name": "search.byType"}
+    {"uri": "search\/{type}", "name": "search.byType"},
+    {"uri": "\/", "name": "home"},
   ];
 
   describe("When Router.route() it's called", function() {
@@ -43,6 +44,10 @@ describe("Router", function() {
 
     it('Should append many query string params', function(done) {
       expect(Router.route('search.byType', {type: 'people', q: 'john', orderBy: 'asc'})).toEqual('http://domain.tld/search/people?q=john&orderBy=asc');
+    });
+
+    it('Should prevent many trailing slashes at the end', function(done) {
+      expect(Router.route('home')).toEqual('http://domain.tld/');
     });
   });
 });

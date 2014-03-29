@@ -1,17 +1,25 @@
 (function(name, definition) {
-    if (typeof module != 'undefined') module.exports = definition();
-    else if (typeof define == 'function' && typeof define.amd == 'object') define(definition);
-    else this[name] = definition();
-}('Router', function() {
+    if (typeof module != 'undefined') {
+      module.exports = definition();
+    } else if (typeof define == 'function' && typeof define.amd == 'object') {
+      define(definition);
+    } else {
+      this[name] = definition();
+    }
+  }('Router', function() {
   return {
     routes: null,
     route: function(name, params) {
       var route = this.searchRoute(name),
-          rootUrl = this.getRootUrl();
+          rootUrl = this.getRootUrl(),
+          result = "",
+          compiled = "";
 
       if (route) {
-        var compiled = this.buildParams(route, params);
-        return rootUrl + '/' + compiled;
+        compiled = this.buildParams(route, params);
+        result = this.cleanupDoubleSlashes(rootUrl + '/' + compiled);
+
+        return result;
       }
 
     },
@@ -56,6 +64,9 @@
         return false;
       }
       return true;
+    },
+    cleanupDoubleSlashes: function(url) {
+      return url.replace(/([^:]\/)\/+/g, "$1");
     }
   };
 }));

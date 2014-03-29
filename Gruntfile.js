@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     jshint: {
-      files: ['tests/jasmine/src/Router.js'],
+      files: ['src/Generators/templates/Router.js'],
       options: {
         curly: true,
         indent: 2,
