@@ -18,7 +18,7 @@
       if (route) {
         compiled = this.buildParams(route, params);
         result = this.cleanupDoubleSlashes(rootUrl + '/' + compiled);
-
+        result = this.stripTrailingSlash(result);
         return result;
       }
 
@@ -34,13 +34,19 @@
       var compiled = route.uri,
           queryParams = {};
 
-      for(var key in params) {
-        if (compiled.indexOf('{' + key + '}') != -1) {
+      for (var key in params) {
+        if (compiled.indexOf('{' + key + '?}') != -1) {
+          if (key in params) {
+            compiled = compiled.replace('{' + key + '?}', params[key]);
+          }
+        } else if (compiled.indexOf('{' + key + '}') != -1) {
           compiled = compiled.replace('{' + key + '}', params[key]);
         } else {
           queryParams[key] = params[key];
         }
       }
+
+      compiled = compiled.replace(/\{([^\/]*)\?}/g, "");
 
       if (!this.isEmptyObject(queryParams)) {
         return compiled + this.buildQueryString(queryParams);
@@ -67,6 +73,12 @@
     },
     cleanupDoubleSlashes: function(url) {
       return url.replace(/([^:]\/)\/+/g, "$1");
+    },
+    stripTrailingSlash: function(url) {
+      if(url.substr(-1) == '/') {
+        return url.substr(0, url.length - 1);
+      }
+      return url;
     }
   };
 }));

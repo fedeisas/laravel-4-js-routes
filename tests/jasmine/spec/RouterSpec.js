@@ -11,6 +11,7 @@ describe("Router", function() {
     {"uri": "search", "name": "search.index"},
     {"uri": "search\/{type}", "name": "search.byType"},
     {"uri": "\/", "name": "home"},
+    {"uri": "/cart\/add\/{article}\/{count?}", "name": "cart.add"},
   ];
 
   describe("When Router.route() it's called", function() {
@@ -47,7 +48,15 @@ describe("Router", function() {
     });
 
     it('Should prevent many trailing slashes at the end', function(done) {
-      expect(Router.route('home')).toEqual('http://domain.tld/');
+      expect(Router.route('home')).toEqual('http://domain.tld');
+    });
+
+    it('Should account for optional parameters of routes', function(done) {
+      expect(Router.route('cart.add', {article: 'foo', count: 2})).toEqual('http://domain.tld/cart/add/foo/2');
+    });
+
+    it('Should ignore unused optional parameters of routes', function(done) {
+      expect(Router.route('cart.add', {article: 'foo'})).toEqual('http://domain.tld/cart/add/foo');
     });
   });
 });
