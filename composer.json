@@ -2,7 +2,6 @@
     "name": "fedeisas/laravel-js-routes",
     "description": "Laravel routes from Javascript",
     "license": "MIT",
-    "version": "1.4",
     "keywords": ["laravel", "generators", "artisan", "routing"],
     "authors": [
         {
