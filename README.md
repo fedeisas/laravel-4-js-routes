@@ -59,6 +59,7 @@ $ php artisan routes:javascript
 | **path**   | *base_path()* | Where to save the generated filename. (ie. public assets folder) |
 | **filter** | *null*        | If you want only some routes to be available on JS, you can use a filter (like js-routable) to select only those |
 | **object** | *Router*      | If you want to choose your own global JS object (to avoid collision) |
+| **prefix** | *null*        | If you want to a path to prefix to all your routes |
 
 ## Javascript usage
 You have to include the generated file in your views (or your assets build process).

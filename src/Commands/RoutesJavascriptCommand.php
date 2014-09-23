@@ -51,7 +51,8 @@ class RoutesJavascriptCommand extends Command
 
         $options = array(
             'filter' => $this->option('filter'),
-            'object' => $this->option('object')
+            'object' => $this->option('object'),
+            'prefix' => $this->option('prefix'),
         );
 
         if ($this->generator->make($this->option('path'), $this->argument('name'), $options)) {
@@ -93,7 +94,8 @@ class RoutesJavascriptCommand extends Command
         return array(
            array('path', 'p', InputOption::VALUE_OPTIONAL, 'Path to assets directory.', base_path()),
            array('filter', 'f', InputOption::VALUE_OPTIONAL, 'Custom route filter.', null),
-           array('object', 'o', InputOption::VALUE_OPTIONAL, 'Custom JS object.', 'Router')
+           array('object', 'o', InputOption::VALUE_OPTIONAL, 'Custom JS object.', 'Router'),
+           array('prefix', 'prefox', InputOption::VALUE_OPTIONAL, 'Custom route prefix.', null)
         );
     }
 }

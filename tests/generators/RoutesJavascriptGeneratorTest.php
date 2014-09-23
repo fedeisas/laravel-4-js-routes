@@ -50,7 +50,7 @@ class RoutesJavascriptGeneratorTest extends PHPUnit_Framework_TestCase
              ->with('/foo/bar/routes.js', file_get_contents(__DIR__.'/stubs/javascript.txt'));
 
         $generator = new RoutesJavascriptGenerator($file, $this->getRouter());
-        $generator->make('/foo/bar', 'routes.js', array('filter' => null, 'object' => 'Router'));
+        $generator->make('/foo/bar', 'routes.js', array('filter' => null, 'object' => 'Router', 'prefix'=> null));
     }
 
     /** @test **/
@@ -67,7 +67,7 @@ class RoutesJavascriptGeneratorTest extends PHPUnit_Framework_TestCase
              ->with('/foo/bar/routes.js', file_get_contents(__DIR__.'/stubs/custom-object.txt'));
 
         $generator = new RoutesJavascriptGenerator($file, $this->getRouter());
-        $generator->make('/foo/bar', 'routes.js', array('filter' => null, 'object' => 'MyRouter'));
+        $generator->make('/foo/bar', 'routes.js', array('filter' => null, 'object' => 'MyRouter', 'prefix'=> null));
     }
 
     /** @test **/
@@ -84,7 +84,24 @@ class RoutesJavascriptGeneratorTest extends PHPUnit_Framework_TestCase
              ->with('/foo/bar/routes.js', file_get_contents(__DIR__.'/stubs/custom-filter.txt'));
 
         $generator = new RoutesJavascriptGenerator($file, $this->getRouter());
-        $generator->make('/foo/bar', 'routes.js', array('filter' => 'js-routable', 'object' => 'Router'));
+        $generator->make('/foo/bar', 'routes.js', array('filter' => 'js-routable', 'object' => 'Router', 'prefix'=> null));
+    }
+
+    /** @test **/
+    public function it_can_generate_javascript_with_custom_prefix()
+    {
+        $file = m::mock('Illuminate\Filesystem\Filesystem')->makePartial();
+
+        $file->shouldReceive('isWritable')
+            ->once()
+            ->andReturn(true);
+
+        $file->shouldReceive('put')
+            ->once()
+            ->with('/foo/bar/routes.js', file_get_contents(__DIR__.'/stubs/custom-prefix.txt'));
+
+        $generator = new RoutesJavascriptGenerator($file, $this->getRouter());
+        $generator->make('/foo/bar', 'routes.js', array('filter' => null, 'object' => 'Router', 'prefix' => 'prefix/'));
     }
 
     /** @test **/
@@ -97,7 +114,7 @@ class RoutesJavascriptGeneratorTest extends PHPUnit_Framework_TestCase
              ->andReturn(false);
 
         $generator = new RoutesJavascriptGenerator($file, $this->getRouter());
-        $output = $generator->make('/foo/bar', 'routes.js', array('filter' => 'js-routable', 'object' => 'Router'));
+        $output = $generator->make('/foo/bar', 'routes.js', array('filter' => 'js-routable', 'object' => 'Router', 'prefix' => null));
 
         $this->assertFalse($output);
     }
