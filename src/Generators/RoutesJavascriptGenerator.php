@@ -48,7 +48,7 @@ class RoutesJavascriptGenerator
      */
     public function make($path, $name, $options = array())
     {
-        $this->parsedRoutes = $this->getParsedRoutes($options['filter']);
+        $this->parsedRoutes = $this->getParsedRoutes($options['filter'], $options['prefix']);
 
         $template = $this->file->get(__DIR__ . '/templates/Router.js');
 
@@ -63,7 +63,7 @@ class RoutesJavascriptGenerator
         return false;
     }
 
-    protected function getParsedRoutes($filter)
+    protected function getParsedRoutes($filter, $prefix)
     {
         $parsedRoutes = array();
 
@@ -71,6 +71,9 @@ class RoutesJavascriptGenerator
             $routeInfo = $this->getRouteInformation($route);
 
             if ($routeInfo) {
+                if ($prefix) {
+                  $routeInfo['uri'] = $prefix . $routeInfo['uri'] ;
+                }
                 if ($filter) {
                     if (in_array($filter, $routeInfo['before'])) {
                         unset($routeInfo['before']);
@@ -89,7 +92,6 @@ class RoutesJavascriptGenerator
     /**
      * Get the route information for a given route.
      *
-     * @param string $name
      * @param \Illuminate\Routing\Route $route
      * @return array
      */
