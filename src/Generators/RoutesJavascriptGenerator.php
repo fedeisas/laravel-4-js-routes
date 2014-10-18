@@ -44,10 +44,13 @@ class RoutesJavascriptGenerator
      *
      * @param string $path
      * @param string $name
+     * @param array $options
      * @return boolean
      */
-    public function make($path, $name, $options = array())
+    public function make($path, $name, array $options = array())
     {
+        $options += ['filter' => null, 'prefix' => null];
+
         $this->parsedRoutes = $this->getParsedRoutes($options['filter'], $options['prefix']);
 
         $template = $this->file->get(__DIR__ . '/templates/Router.js');
@@ -63,7 +66,14 @@ class RoutesJavascriptGenerator
         return false;
     }
 
-    protected function getParsedRoutes($filter, $prefix)
+    /**
+     * Get parsed routes
+     *
+     * @param string $filter
+     * @param string $prefix
+     * @return array
+     */
+    protected function getParsedRoutes($filter = null, $prefix = null)
     {
         $parsedRoutes = array();
 
