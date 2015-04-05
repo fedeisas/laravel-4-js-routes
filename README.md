@@ -2,7 +2,6 @@ Laravel Javascript Routes
 =========================
 
 [![Travis Badge](https://secure.travis-ci.org/fedeisas/laravel-4-js-routes.png)](http://travis-ci.org/fedeisas/laravel-4-js-routes)
-[![Coverage Status](https://coveralls.io/repos/fedeisas/laravel-4-js-routes/badge.png)](https://coveralls.io/r/fedeisas/laravel-4-js-routes)
 [![Latest Stable Version](https://poser.pugx.org/fedeisas/laravel-4-js-routes/v/stable.png)](https://packagist.org/packages/fedeisas/laravel-4-js-routes)
 [![Latest Unstable Version](https://poser.pugx.org/fedeisas/laravel-4-js-routes/v/unstable.png)](https://packagist.org/packages/fedeisas/laravel-4-js-routes)
 [![Total Downloads](https://poser.pugx.org/fedeisas/laravel-4-js-routes/downloads.png)](https://packagist.org/packages/fedeisas/laravel-4-js-routes)
