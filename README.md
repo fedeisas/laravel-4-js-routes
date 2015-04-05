@@ -1,30 +1,33 @@
 Laravel Javascript Routes
 =========================
 
-[![Travis Badge](https://secure.travis-ci.org/fedeisas/laravel-js-routes.png)](http://travis-ci.org/fedeisas/laravel-js-routes)
-[![Coverage Status](https://coveralls.io/repos/fedeisas/laravel-js-routes/badge.png)](https://coveralls.io/r/fedeisas/laravel-js-routes)
-[![Latest Stable Version](https://poser.pugx.org/fedeisas/laravel-js-routes/v/stable.png)](https://packagist.org/packages/fedeisas/laravel-js-routes)
-[![Latest Unstable Version](https://poser.pugx.org/fedeisas/laravel-js-routes/v/unstable.png)](https://packagist.org/packages/fedeisas/laravel-js-routes)
-[![Total Downloads](https://poser.pugx.org/fedeisas/laravel-js-routes/downloads.png)](https://packagist.org/packages/fedeisas/laravel-js-routes)
-[![License](https://poser.pugx.org/fedeisas/laravel-js-routes/license.png)](https://packagist.org/packages/fedeisas/laravel-js-routes)
+[![Travis Badge](https://secure.travis-ci.org/fedeisas/laravel-4-js-routes.png)](http://travis-ci.org/fedeisas/laravel-4-js-routes)
+[![Coverage Status](https://coveralls.io/repos/fedeisas/laravel-4-js-routes/badge.png)](https://coveralls.io/r/fedeisas/laravel-4-js-routes)
+[![Latest Stable Version](https://poser.pugx.org/fedeisas/laravel-4-js-routes/v/stable.png)](https://packagist.org/packages/fedeisas/laravel-4-js-routes)
+[![Latest Unstable Version](https://poser.pugx.org/fedeisas/laravel-4-js-routes/v/unstable.png)](https://packagist.org/packages/fedeisas/laravel-4-js-routes)
+[![Total Downloads](https://poser.pugx.org/fedeisas/laravel-4-js-routes/downloads.png)](https://packagist.org/packages/fedeisas/laravel-4-js-routes)
+[![License](https://poser.pugx.org/fedeisas/laravel-4-js-routes/license.png)](https://packagist.org/packages/fedeisas/laravel-4-js-routes)
 
 ## Why?
 I love the Laravel 4 routing system and I often use named routes like `route('users.show', array('id' => 1))` to generate `http://domain.tld/users/1`.
 With the amazing uprising of Javascript frameworks (AngularJS, EmberJS, Backbone, etc.) it's hard to track changes on your routes between the backend and the REST calls from your Javascript.
 The goal of this library is to expose those named routes to your frontend so you can do: `Router.route('users.show', {id: 1})` and get the same result.
 
+## Laravel 5
+I haven't had the time to update this package to Laravel 5. Eventually, I'll create a new repo for that.
+
 ## Requirements
 - Laravel **4.1**
 
 ## Installation
 
-Begin by installing this package through Composer. Edit your project's `composer.json` file to require `fedeisas/laravel-js-routes`.
+Begin by installing this package through Composer. Edit your project's `composer.json` file to require `fedeisas/laravel-4-js-routes`.
 
 ```json
 {
   "require": {
         "laravel/framework": "4.0.*",
-        "fedeisas/laravel-js-routes": "1.*"
+        "fedeisas/laravel-4-js-routes": "1.*"
     },
     "minimum-stability" : "dev"
 }
